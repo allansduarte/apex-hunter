@@ -1,0 +1,304 @@
+[gd_scene load_steps=3 format=3 uid="uid://dph28v1dfawlp"]
+
+[ext_resource type="Script" path="res://scripts/main_hud.gd" id="1_main_hud"]
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="2_game_manager"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_main_hud")
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("2_game_manager")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15, 0.15, 0.2, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "APEX HUNTER - Prototype"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 2
+
+[node name="CollectionSection" type="PanelContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CollectionBG" type="ColorRect" parent="MarginContainer/VBoxContainer/GridContainer/CollectionSection"]
+layout_mode = 2
+color = Color(0.2, 0.3, 0.4, 1)
+
+[node name="CollectionContent" type="VBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer/CollectionSection"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="CollectionTitle" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/CollectionSection/CollectionContent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "COLLECTION"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/GridContainer/CollectionSection/CollectionContent"]
+layout_mode = 2
+
+[node name="CopperRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer/CollectionSection/CollectionContent"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="CopperPlaceholder" type="ColorRect" parent="MarginContainer/VBoxContainer/GridContainer/CollectionSection/CollectionContent/CopperRow"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.8, 0.5, 0.2, 1)
+
+[node name="CopperLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/CollectionSection/CollectionContent/CopperRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+text = "Copper: 0"
+vertical_alignment = 1
+
+[node name="CollectCopperBtn" type="Button" parent="MarginContainer/VBoxContainer/GridContainer/CollectionSection/CollectionContent/CopperRow"]
+layout_mode = 2
+text = "Collect"
+
+[node name="TinRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer/CollectionSection/CollectionContent"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TinPlaceholder" type="ColorRect" parent="MarginContainer/VBoxContainer/GridContainer/CollectionSection/CollectionContent/TinRow"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.6, 0.6, 0.7, 1)
+
+[node name="TinLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/CollectionSection/CollectionContent/TinRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+text = "Tin: 0"
+vertical_alignment = 1
+
+[node name="CollectTinBtn" type="Button" parent="MarginContainer/VBoxContainer/GridContainer/CollectionSection/CollectionContent/TinRow"]
+layout_mode = 2
+text = "Collect"
+
+[node name="CraftingSection" type="PanelContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CraftingBG" type="ColorRect" parent="MarginContainer/VBoxContainer/GridContainer/CraftingSection"]
+layout_mode = 2
+color = Color(0.3, 0.4, 0.2, 1)
+
+[node name="CraftingContent" type="VBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer/CraftingSection"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="CraftingTitle" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/CraftingSection/CraftingContent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CRAFTING"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/GridContainer/CraftingSection/CraftingContent"]
+layout_mode = 2
+
+[node name="ToolsRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer/CraftingSection/CraftingContent"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ToolPlaceholder" type="ColorRect" parent="MarginContainer/VBoxContainer/GridContainer/CraftingSection/CraftingContent/ToolsRow"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="ToolsLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/CraftingSection/CraftingContent/ToolsRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+text = "Tools: 0"
+vertical_alignment = 1
+
+[node name="CraftInfoLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/CraftingSection/CraftingContent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Recipe: 2 Copper + 1 Tin"
+horizontal_alignment = 1
+
+[node name="CraftToolBtn" type="Button" parent="MarginContainer/VBoxContainer/GridContainer/CraftingSection/CraftingContent"]
+layout_mode = 2
+text = "Craft Tool"
+
+[node name="CombatSection" type="PanelContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CombatBG" type="ColorRect" parent="MarginContainer/VBoxContainer/GridContainer/CombatSection"]
+layout_mode = 2
+color = Color(0.4, 0.2, 0.2, 1)
+
+[node name="CombatContent" type="VBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer/CombatSection"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="CombatTitle" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/CombatSection/CombatContent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "COMBAT"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/GridContainer/CombatSection/CombatContent"]
+layout_mode = 2
+
+[node name="PlayerRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer/CombatSection/CombatContent"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PlayerPlaceholder" type="ColorRect" parent="MarginContainer/VBoxContainer/GridContainer/CombatSection/CombatContent/PlayerRow"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.2, 0.8, 0.2, 1)
+
+[node name="PlayerHPLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/CombatSection/CombatContent/PlayerRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+text = "Player HP: 100/100"
+vertical_alignment = 1
+
+[node name="EnemyRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer/CombatSection/CombatContent"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="EnemyPlaceholder" type="ColorRect" parent="MarginContainer/VBoxContainer/GridContainer/CombatSection/CombatContent/EnemyRow"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.8, 0.2, 0.2, 1)
+
+[node name="EnemyHPLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/CombatSection/CombatContent/EnemyRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+text = "Enemy HP: 50/50"
+vertical_alignment = 1
+
+[node name="CombatStatusLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/CombatSection/CombatContent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Ready to fight!"
+horizontal_alignment = 1
+
+[node name="StartCombatBtn" type="Button" parent="MarginContainer/VBoxContainer/GridContainer/CombatSection/CombatContent"]
+layout_mode = 2
+text = "Start Combat"
+
+[node name="ShopSection" type="PanelContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ShopBG" type="ColorRect" parent="MarginContainer/VBoxContainer/GridContainer/ShopSection"]
+layout_mode = 2
+color = Color(0.4, 0.3, 0.5, 1)
+
+[node name="ShopContent" type="VBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer/ShopSection"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ShopTitle" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/ShopSection/ShopContent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "SHOP"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/GridContainer/ShopSection/ShopContent"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/ShopSection/ShopContent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Coins: 100"
+horizontal_alignment = 1
+
+[node name="BuyHPBtn" type="Button" parent="MarginContainer/VBoxContainer/GridContainer/ShopSection/ShopContent"]
+layout_mode = 2
+text = "Buy HP Upgrade (50 coins)"
+
+[node name="BuyDamageBtn" type="Button" parent="MarginContainer/VBoxContainer/GridContainer/ShopSection/ShopContent"]
+layout_mode = 2
+text = "Buy Damage Upgrade (40 coins)"
+
+[node name="BuyDefenseBtn" type="Button" parent="MarginContainer/VBoxContainer/GridContainer/ShopSection/ShopContent"]
+layout_mode = 2
+text = "Buy Defense Upgrade (35 coins)"
+
+[node name="ProgressSection" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ProgressBG" type="ColorRect" parent="MarginContainer/VBoxContainer/ProgressSection"]
+layout_mode = 2
+color = Color(0.3, 0.3, 0.5, 1)
+
+[node name="ProgressContent" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ProgressSection"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ProgressTitle" type="Label" parent="MarginContainer/VBoxContainer/ProgressSection/ProgressContent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "PROGRESS"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/ProgressSection/ProgressContent"]
+layout_mode = 2
+
+[node name="RankLabel" type="Label" parent="MarginContainer/VBoxContainer/ProgressSection/ProgressContent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Rank: G-"
+horizontal_alignment = 1
+
+[node name="StatsLabel" type="Label" parent="MarginContainer/VBoxContainer/ProgressSection/ProgressContent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "ATK: 10 | DEF: 5 | HP: 100"
+horizontal_alignment = 1
