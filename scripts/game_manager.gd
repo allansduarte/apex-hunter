@@ -1,6 +1,9 @@
 extends Node
 class_name GameManager
 
+# Constants
+const MIN_DAMAGE: int = 1
+
 # Singleton pattern
 static var instance: GameManager
 
@@ -95,7 +98,7 @@ func process_combat_round() -> void:
 		return
 	
 	# Player attacks enemy
-	var player_attack: int = max(1, player_damage - enemy_defense)
+	var player_attack: int = max(MIN_DAMAGE, player_damage - enemy_defense)
 	enemy_hp -= player_attack
 	enemy_stats_changed.emit()
 	
@@ -104,7 +107,7 @@ func process_combat_round() -> void:
 		return
 	
 	# Enemy attacks player
-	var enemy_attack: int = max(1, enemy_damage - player_defense)
+	var enemy_attack: int = max(MIN_DAMAGE, enemy_damage - player_defense)
 	player_hp -= enemy_attack
 	player_stats_changed.emit()
 	

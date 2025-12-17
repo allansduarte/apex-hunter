@@ -75,16 +75,16 @@ func _on_start_combat_pressed() -> void:
 		game_manager.start_combat()
 
 func _on_buy_hp_pressed() -> void:
-	if game_manager.buy_health_upgrade():
-		pass  # UI will update via signal
+	# Purchase handled by game_manager, UI updates via signals
+	game_manager.buy_health_upgrade()
 
 func _on_buy_damage_pressed() -> void:
-	if game_manager.buy_damage_upgrade():
-		pass  # UI will update via signal
+	# Purchase handled by game_manager, UI updates via signals
+	game_manager.buy_damage_upgrade()
 
 func _on_buy_defense_pressed() -> void:
-	if game_manager.buy_defense_upgrade():
-		pass  # UI will update via signal
+	# Purchase handled by game_manager, UI updates via signals
+	game_manager.buy_defense_upgrade()
 
 # Signal handlers
 func _on_resources_changed() -> void:
